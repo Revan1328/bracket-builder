@@ -591,13 +591,14 @@
 			Team t2 = list.ElementAt(i + 1);
 			Team t = FindWinner(t1, t2);
 			var isUpset = (t.Name == t1.Name && t.Seed > t2.Seed) || (t.Name == t2.Name && t.Seed > t1.Seed);
+			var message = $"({t.Seed}) {t.Name}";
 			if (isUpset)
             {
-				WriteLineWithColor(t.Name, ConsoleColor.Red);
+				WriteLineWithColor(message, ConsoleColor.Red);
 			}
             else
             {
-				Console.WriteLine(t.Name);
+				Console.WriteLine(message);
             }
 			
 			nextRound.Add(t);
