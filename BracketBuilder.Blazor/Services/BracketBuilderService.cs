@@ -12,7 +12,8 @@ public class BracketBuilderService
     private const bool RUN_PERFECT_BRACKET = false;
 
     private Dictionary<int, List<Team>> winnersByRound = new Dictionary<int, List<Team>>();
-
+    
+    #region Teams
     private List<Team> teams = new List<Team>
     {
         //Upper-left
@@ -87,7 +88,9 @@ public class BracketBuilderService
         new Team("Iowa St.", 2,  Region.Midwest),
         new Team("Tennessee St.", 15, Region.Midwest),
     };
+    #endregion
 
+    #region Perfect Bracket Teams
     private readonly Dictionary<int, List<Team>> perfectMap = new Dictionary<int, List<Team>>()
     {
         {1, new List<Team>()
@@ -172,7 +175,9 @@ public class BracketBuilderService
             new Team("UConn", 1,  Region.East)
         } }
     };
+    #endregion
 
+    #region StatMaps
     private static Dictionary<double, double> statsMap = new Dictionary<double, double>
     {
         {0, .5 },
@@ -533,6 +538,9 @@ public class BracketBuilderService
         {16, sixteenSeedMap},
     };
 
+    #endregion
+
+    #region RoundDisplayNames
     private readonly IReadOnlyDictionary<int, string> roundDisplayNames = new Dictionary<int, string>
     {
         { 1, "Round 1" },
@@ -542,6 +550,7 @@ public class BracketBuilderService
         { 5, "Final Four" },
         { 6, "Championship" }
     };
+    #endregion
 
     public event Action<BracketOutput>? OnOutput;
 
