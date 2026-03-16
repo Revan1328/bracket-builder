@@ -32,10 +32,10 @@ jobs:
     
     - name: Copy index.html to 404.html
       run: |
-        if [ -f ./publish/wwwroot/index.html ]; then
-          cp ./publish/wwwroot/index.html ./publish/wwwroot/404.html
+        if [ -f ./publish/wwwroot/bracket-builder/index.html ]; then
+          cp ./publish/wwwroot/bracket-builder/index.html ./publish/wwwroot/bracket-builder/404.html
         else
-          echo "index.html not found in ./publish/wwwroot/"
+          echo "index.html not found in ./publish/wwwroot/bracket-builder/"
           exit 1
         fi
     
