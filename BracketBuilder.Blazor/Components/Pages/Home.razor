@@ -53,7 +53,12 @@
 
             <div class="mt-4 text-center">
                 <p class="text-muted">
-                    Uses statistical models based on seed data to simulate tournament matchups.
+                    Currently has teams for 2026 bracket. Results for each round start at the upper-left quadrant of the bracket, go down into the lower-left quadrant, then go to the upper-right quadrant and down. If a line is red, that means the team that won had a higher numbered seed than the team they beat (i.e. it was an upset).
+                </p>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-muted">
+                    The winner of each game is determined by taking the seed of each team and finding the difference between them; that value is then <a href="https://github.com/Revan1328/bracket-builder/blob/main/BracketBuilder.Blazor/Services/BracketBuilderService.cs#L181" target="_blank">passed into a map</a> that is used to determine the odds of the team with the higher numbered seed winning. For example, if two 8-seeds play against each other, the difference between their seed values is 0, so the odds are 50/50. But if a 1-seed plays against a 16-seed, the difference is 15, so the odds given for the 16-seed to win is 1/10000.
                 </p>
             </div>
         </div>
