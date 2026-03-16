@@ -1,0 +1,12 @@
+@implements IAsyncDisposable
+
+<div class="navbar navbar-dark bg-dark">
+    <div class="navbar-brand ms-3">Bracket Builder</div>
+</div>
+
+@code {
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        await Task.CompletedTask;
+    }
+}
